@@ -121,7 +121,7 @@
     @apply bg-background text-foreground;
   }
   .hidden-scrollbar::-webkit-scrollbar {
-    display: none;
+    display: none !important;
   }
   
 }

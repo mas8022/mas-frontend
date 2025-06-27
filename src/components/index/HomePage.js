@@ -37,9 +37,14 @@ const skillItems = [
 
 const projects = [
   {
+    title: "هوش مصنوعی",
+    link: "/ai",
+  },
+  {
     title: "سیستم مدیریت مالی",
     link: "/financial",
   },
+
   {
     title: "چت‌اپ ریل‌تایم",
     link: "/chat",
