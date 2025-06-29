@@ -1,10 +1,9 @@
 "use client";
 import Fetch from "@/utils/axios";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const AuthGuard = ({ children }) => {
-  const router = useRouter();
   const pathname = usePathname();
   const [isAccess, setIsAccess] = useState(null);
 
@@ -39,7 +38,7 @@ const AuthGuard = ({ children }) => {
 
   if (isAccess === "no-access") {
     if (pathname !== "/auth") {
-      router.replace("/auth");
+      location.pathname = "/auth";
       return null;
     }
 
@@ -47,7 +46,7 @@ const AuthGuard = ({ children }) => {
   }
 
   if (pathname === "/auth") {
-    router.replace("/");
+    location.pathname = "/";
     return null;
   }
 
