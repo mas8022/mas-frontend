@@ -12,7 +12,19 @@ const AuthGuard = ({ children }) => {
 
     const checkAccess = async () => {
       try {
-        const { status } = await Fetch.get("/auth/refresh");
+        const { status, newAccessToken } = await Fetch.get("/auth/refresh");
+
+        if (newAccessToken) {
+          await fetch("/api/auth", {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ newAccessToken }),
+            credentials: "include",
+          });
+        }
+
         if (!isMounted) return;
 
         if (status > 201) {

@@ -67,6 +67,7 @@ export default function LoginForm() {
       if (step === "phone") {
         if (!phoneRegex.test(data.phone)) {
           toast.error("شماره تلفن معتبر نیست");
+          setLoading(false);
           return;
         }
 
@@ -78,6 +79,7 @@ export default function LoginForm() {
 
         if (status > 201) {
           toast.error(message);
+          setLoading(false);
           return;
         }
 
@@ -88,20 +90,34 @@ export default function LoginForm() {
       } else {
         if (!otpRegex.test(data.otp)) {
           toast.error("کد باید ۵ رقم باشد");
+          setLoading(false);
           return;
         }
 
-        const { status, message } = await Fetch.post("/auth/verify-otp", {
-          phone,
-          code: data.otp,
-        });
+        const { status, message, accessToken, sessionId } = await Fetch.post(
+          "/auth/verify-otp",
+          {
+            phone,
+            code: data.otp,
+          }
+        );
 
         if (status > 201) {
           toast.error(message);
+          setLoading(false);
           return;
         }
 
-        location.pathname = "/";
+        await fetch("/api/auth", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ accessToken, sessionId }),
+          credentials: "include",
+        });
+
+        window.location.href = "/";
       }
     } catch (error) {
       toast.error("خطایی رخ داد، دوباره تلاش کنید.");

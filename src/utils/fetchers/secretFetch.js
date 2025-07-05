@@ -16,6 +16,17 @@ secretFetch.interceptors.request.use(
     try {
       const { data } = await refreshInstance.get("/auth/refresh");
 
+      if (data?.newAccessToken) {
+        await fetch("/api/auth", {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ newAccessToken: data?.newAccessToken }),
+          credentials: "include",
+        });
+      }
+
       if (data.status > 201) {
         toast.error(data.message || "توکن معتبر نیست");
         window.location.pathname = "/";
