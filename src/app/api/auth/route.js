@@ -11,7 +11,7 @@ export async function POST(req) {
       secure: process.env.NODE_ENV === "production",
       path: "/",
       maxAge: 60 * 15,
-      sameSite: "lax",
+      sameSite: "none",
     });
 
     const sessionIdCookie = serialize("session_id", sessionId, {
@@ -19,7 +19,7 @@ export async function POST(req) {
       secure: process.env.NODE_ENV === "production",
       path: "/",
       maxAge: 60 * 60 * 24 * 7,
-      sameSite: "lax",
+      sameSite: "none",
     });
 
     return new NextResponse(JSON.stringify({ success: true }), {
@@ -46,7 +46,7 @@ export async function PUT(req) {
       secure: process.env.NODE_ENV === "production",
       path: "/",
       maxAge: 60 * 15,
-      sameSite: "lax",
+      sameSite: "none",
     });
 
     return new NextResponse(JSON.stringify({ success: true }), {
