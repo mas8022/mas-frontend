@@ -6,12 +6,8 @@ export const useLocalStorage = (key, initialValue) => {
   const [isPending, setIsPending] = useState(true);
 
   const handleSetState = (value) => {
-    try {
-      localStorage.setItem(key, JSON.stringify(value));
-      setState(value);
-    } catch (err) {
-      console.error("Failed to set localStorage:", err);
-    }
+    localStorage.setItem(key, JSON.stringify(value));
+    setState(value);
   };
 
   useEffect(() => {
