@@ -12,6 +12,7 @@ export async function POST(req) {
       path: "/",
       maxAge: 60 * 15,
       sameSite: "none",
+      domain: ".liara.run",
     });
 
     const sessionIdCookie = serialize("session_id", sessionId, {
@@ -20,6 +21,7 @@ export async function POST(req) {
       path: "/",
       maxAge: 60 * 60 * 24 * 7,
       sameSite: "none",
+      domain: ".liara.run",
     });
 
     return new NextResponse(JSON.stringify({ success: true }), {
@@ -47,6 +49,7 @@ export async function PUT(req) {
       path: "/",
       maxAge: 60 * 15,
       sameSite: "none",
+      domain: ".liara.run",
     });
 
     return new NextResponse(JSON.stringify({ success: true }), {
