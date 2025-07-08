@@ -10,7 +10,7 @@ const categories = [
   { title: "غذا و خوراکی", icon: Pizza },
   { title: "جغرافیا", icon: Globe },
   { title: "نجوم", icon: Telescope },
-  { title: "تاریخ", icon: Landmark },
+  { title: "تاریخ", icon: Landmark }
 ];
 
 const Page = () => {
@@ -35,7 +35,7 @@ const Page = () => {
           {isPending ? (
             <MoonLoader size={40} color={theme === "dark" ? "#fff" : "#000"} />
           ) : (
-            data.score
+            data? data.score : 0
           )}
         </div>
         <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">

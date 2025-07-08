@@ -20,7 +20,7 @@ import toast from "react-hot-toast";
 import Link from "next/link";
 
 export default function BottomBar() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [open, setOpen] = useState(false);
 
   const handleLogout = async () => {
@@ -53,9 +53,9 @@ export default function BottomBar() {
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
           >
-            {theme === "dark" ? (
+            {resolvedTheme === "dark" ? (
               <Sun className="h-5 w-5" />
             ) : (
               <Moon className="h-5 w-5" />
