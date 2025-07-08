@@ -31,6 +31,7 @@ export default function ChatBox() {
     setMessages(newMessages);
     setLoading(true);
 
+    
     try {
       const res = await Fetch.post("/ai", { messages: newMessages });
       if (res.status > 201) throw new Error();
