@@ -10,7 +10,6 @@ import {
   SiNextdotjs,
   SiNestjs,
   SiSocketdotio,
-  SiRedis,
   SiPrisma,
   SiMongodb,
 } from "react-icons/si";
@@ -65,7 +64,7 @@ export default function HomePage() {
       {/* Header */}
       <div className="flex flex-col items-center mb-6">
         <Image
-          src="/images/my-photo.jpg"
+          src="/images/my-photo.png"
           width={100}
           height={100}
           alt="avatar"
