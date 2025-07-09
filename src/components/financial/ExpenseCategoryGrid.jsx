@@ -17,7 +17,7 @@ const expenseCategories = [
   { id: "مسکن", name: "مسکن", icon: Home },
   { id: "آب، برق، گاز", name: "آب، برق، گاز", icon: Droplet },
   { id: "تفریح", name: "تفریح", icon: Smile },
-  { id: "بهداشت و درمان", name: "بهداشت و درمان", icon: HeartPulse },
+  { id: "بهداشت و درمان", name: "بهداشت", icon: HeartPulse },
   { id: "آموزش", name: "آموزش", icon: GraduationCap },
   { id: "سایر", name: "سایر", icon: MoreHorizontal },
 ];
@@ -48,8 +48,8 @@ export function ExpenseCategoryGrid({ selectedCategory, onCategorySelect }) {
                 }`}
               />
               <span
-                className={`text-sm font-medium ${
-                  isSelected ? "text-white" : "text-gray-700"
+                className={`text-sm font-medium text-white/50 ${
+                  isSelected ? "!text-white" : "text-gray-700"
                 }`}
               >
                 {category.name}

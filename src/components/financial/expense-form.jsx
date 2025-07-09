@@ -89,7 +89,7 @@ export function ExpenseForm() {
             />
           </div>
 
-          <Button className="w-full flex-1 bg-red-600 hover:bg-red-700 h-12 text-lg">
+          <Button className="w-full flex-1 bg-red-600 hover:bg-red-700 h-12 text-lg text-white">
             <Minus className="h-5 w-5 mr-2" />
             ثبت هزینه
           </Button>

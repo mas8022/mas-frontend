@@ -45,12 +45,12 @@ export function CategoryGrid({ selectedCategory, onCategorySelect }) {
           >
             <Icon
               className={`h-6 w-6 ${
-                isSelected ? "text-white" : "text-green-600"
+                isSelected ? "!text-white" : "text-green-600"
               }`}
             />
             <span
-              className={`text-sm font-medium ${
-                isSelected ? "text-white" : "text-gray-700"
+              className={`text-sm font-medium dark:text-white/50 ${
+                isSelected ? "!text-white" : "text-gray-700"
               }`}
             >
               {category.name}

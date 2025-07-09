@@ -16,7 +16,9 @@ export default function Page() {
             </div>
           </div>
           <div>
-            <h1 className="text-3xl font-bold text-gray-800 dark:text-white">داشبورد مالی</h1>
+            <h1 className="text-3xl font-bold text-gray-800 dark:text-white">
+              داشبورد مالی
+            </h1>
             <p className="text-gray-600 dark:text-gray-300 mt-2">
               مدیریت کامل درآمد و هزینه‌های شما
             </p>

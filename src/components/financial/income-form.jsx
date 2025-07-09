@@ -128,7 +128,7 @@ export function IncomeForm() {
           {/* Submit Button */}
           <Button
             type="submit"
-            className="w-full flex-1 bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800 h-12 text-lg"
+            className="w-full flex-1 bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800 h-12 text-lg text-white"
           >
             <Plus className="h-5 w-5 mr-2" />
             ثبت درآمد
